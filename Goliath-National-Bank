@@ -1,0 +1,132 @@
+// This program calculates the average number of day(s) company employees were absent
+
+#include <iostream>
+using namespace std;
+
+void displayOpeningScreen();	// function to welcome the user and explain program purpose
+int getEmployees();				// function to ask and return the number of employees in the company
+int getDaysOut(int);			// function to calculate the total days missed by each employee during the year
+double calcAverage(int, int);	// function to calculate the average number of absent days
+void copyrightScreen();			// function to display company copyright & programmer name
+
+int main()
+{
+    int employees;	// To hold the number of employees
+    int daysOut;	// To hold the number of days missed
+    double average;	// To hold the average days missed
+    
+    // Function to display the opening screen/welcome for the user
+    displayOpeningScreen();
+    
+    // Call to get the number of employees
+    employees = getEmployees();
+    
+    // Get the number of days missed by all employees
+    daysOut = getDaysOut(employees);
+    
+    // Get the average number of days missed
+    average = calcAverage(employees, daysOut);
+    
+    // Display the average
+    cout << "\nThe average number of days missed was "
+    << average << ".\n\n";
+    
+    // Call to display the closing screen
+    copyrightScreen();
+    
+    return 0;
+}
+
+// ********************************************************
+// Function to welcome the user to the program           *
+// ********************************************************
+
+void displayOpeningScreen()
+{
+    cout << "Hey there! This program will calculate the average number\n"
+         << "of day(s) Goliath National Bank employees were absent." << endl;
+}
+
+
+// ********************************************************
+// The getEmployees function asks the user for the number *
+// of employees in the company, validates, and returns    *
+// the value.                                             *
+// ********************************************************
+int getEmployees()
+{
+    int employees;	// To hold the number of employees
+    
+    // Get the number of employees in the company
+    cout << "How many employees are there in the company? ";
+    cin >> employees;
+    
+    // Validate the number of employees.
+    while (employees < 1)
+    {
+        cout << "Error: The number of employees must be at least one." << endl;
+        cout << "How many employees are there in the company? ";
+        cin >> employees;
+    }
+    
+    // Return the number of employees in the company
+    return employees;
+}
+
+// ********************************************************
+// The getDaysOut function accepts the number of employees*
+// in the company as an argument. It asks the user to     *
+// enter the number of days each employee missed during   *
+// the past year, validates it, and returns the total.	  *
+// ********************************************************
+int getDaysOut(int employees)
+{
+    int daysOut;	// To hold the days missed
+    int total = 0;	// To hold the running total
+    
+    // Get the number of days missed by each employee.
+    for (int count = 1; count <= employees; count++)
+    {
+        cout << "How many days did employee "
+        << count << " miss? ";
+        cin >> daysOut;
+        
+        // Validate the number of days missed.
+        while(daysOut < 0)
+        {
+            cout << "The days missed must be at least 0.\n"
+            << "How many days did employee "
+            << count << " miss? ";
+            cin >> daysOut;
+        }
+        
+        // Increment the total.
+        total += daysOut;
+    }
+    
+    // Return the total days missed for all employees.
+    return total;
+}
+
+// ********************************************************
+// The calcAverage function takes the number of employees *
+// in the company and the total number of days absent for *
+// all employees during the year as arguments. The        *
+// function returns the average number of days absent.    *
+// ********************************************************
+double calcAverage(int employees, int daysOut)
+{
+    // Return the average number of days missed.
+    return static_cast<double>(daysOut) / employees;
+}
+
+// ********************************************************
+// Function to display final screen & copyright           *
+// ********************************************************
+void copyrightScreen()
+{
+    cout << "Thank you for using this program. Goliath National Bank (c) 2016" << endl;
+
+    
+    
+}
