@@ -1,0 +1,52 @@
+//  This program is a modular design program that converts
+//  the user's age in years into their age in dog years.
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Function prototypes
+int dogYears(string, int);
+void copyright();
+
+int main()
+{
+    //Variables
+    string name; //to hold user's name
+    int age; //to hold user's age
+    
+    cout << "Hey pal! Wanna find out how old you are in dog years?" << endl;
+    
+    // get user's name and age
+    cout << "What is your name and age? " << endl;
+    cin >> name >> age;
+    
+    //Call dogYears function, passing the value in name and age
+    dogYears(name, age);
+
+    // Call copyright function
+    copyright();
+    
+    return 0;
+}
+
+// Definition of function dogYears.
+int dogYears(string name, int age)
+{
+    int dogAge; // to hold user's age in dog years
+    
+    // Calculate user's age in dog years
+    dogAge = age*7;
+    
+    // Display the user's age in dog years
+    cout << "Whoa " << name << "! You are " << age << " in human years and " << dogAge << " in dog years." << endl;
+
+    return 0;
+}
+
+// Definition of function copyright.
+void copyright()
+{
+    cout << "This program was created by Respect Your Dog Elders, LLC. Thanks for playing! " << endl;
+    
+}
