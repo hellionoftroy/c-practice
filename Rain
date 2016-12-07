@@ -1,0 +1,47 @@
+// This program illustrates the use of a sentinel in a while loop.
+// The user is asked for monthly rainfall totals until a sentinel
+// value of -1 is entered. Then the total rainfall is displayed.
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	
+// Variables
+float total = 0, rain, month = 1;
+
+// Get the amount of rain from user
+cout << "Enter the total rainfall for month " << month << endl;
+cout << "Enter -1 when you are finished" << endl;
+cin >> rain; // Code to read in the value for rain
+
+
+// Code to start a while loop that iterates
+// while rain does not equal -1
+    while (rain != -1)
+    {
+        total = total + rain; // Code to update total by adding it to rain
+        month++; // code to increment month by one
+        
+        // Get the input again
+        cout << "Enter the total rainfall for month " << month << endl;
+        cout << "Enter -1 when you are finished" << endl;
+        cin >> rain; // Code to read in the value for rain
+        
+    } // End of while loop for monthly rain input
+
+
+    
+// Display the total rainfall for the # of months the user input
+// Show a "no data entered" message when user does not enter a rainfall amount
+if (month == 1)
+  cout << "No data has been entered" << endl;
+else
+  cout << "The total rainfall for the " << month-1
+       << " months is "<< total << " inches." << endl;
+
+return 0;
+}
+
