@@ -9,7 +9,7 @@ void displayOpeningScreen();	// function to welcome client
 int getClientID();				// function to ask for client ID number
 int getMenuChoice();			// function to ask for client's menu choice
 int getHours();                 // function to ask for hours of service needed
-int calcCost(int, int);              // function to calculate the cost of services selected
+int calcCost(int, int);         // function to calculate the cost of services selected
 void displayItemizedBill(int, int, int, float); // function to show client ID, level, hours, and total cost
 void displayCopyrightScreen();  // function to display copyright information
 
@@ -19,7 +19,7 @@ int main()
     int clientID = 0;	  // To hold the client ID number
     int level = 0;        // To hold the level of service chosen
     int hours = 0;        // To hold the number of hours requested
-    float totalCost = 0; // To hold the total cost of services
+    float totalCost = 0;  // To hold the total cost of services
     
     // Set display parameters
     cout << fixed << showpoint << setprecision(2);
